@@ -26,3 +26,12 @@ console.log(listaNumeros);
 
 
 /////exemplo6 - exemplo de array com laço de iteração
+let linguagensArray: string[] = new Array('JavaScript', "Python", "PHP", "C#");
+
+function funcaoLinguagens(linguagens: Array<string>){
+    for (let i = 0; i < linguagens.length; i++) { 
+        console.log(linguagensArray[i]);
+    };
+};
+
+funcaoLinguagens(linguagensArray);
