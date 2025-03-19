@@ -20,3 +20,29 @@ console.log(pessoa3)
 ////exemplo4 - usando tupla com spread operator 
 let listaFrutas: [string, ...string[]] = ['Abacaxi', "Laranja", "Maça", "Melância", "Manga"];
 console.log(...listaFrutas)
+
+
+///exemplo5 - lista heterogênea de uma tupla
+let listaFrutas2: [number, boolean, ...string[]] = [5, true, ...listaFrutas];
+console.log(listaFrutas2);
+
+
+///exemplo6 - Uso de função com tuplas
+function listarPessoas(nomes: string[], idades: number[]){
+    return [...nomes, ...idades];
+};
+
+let resultado = listarPessoas(["Luís Eduardo", "Lucas Cauã"],[20, 18]);
+console.log(resultado);
+
+///exemplo7 - labeled tuples com spread operator numa função
+type Nome = 
+        | [primeiroNome: string, sobrenome: string]
+        | [primeiroNome: string, nomeMeio: string, sobrenome: string]; 
+
+function criarPessoa(...nome: Nome){
+    return [...nome];
+};
+
+console.log(criarPessoa("Luís Eduardo", 'Sabino'));
+console.log(criarPessoa("Luís Eduardo", 'Sabino', 'da Silva'));

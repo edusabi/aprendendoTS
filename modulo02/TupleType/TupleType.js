@@ -15,3 +15,19 @@ console.log(pessoa3);
 ////exemplo4 - usando tupla com spread operator 
 let listaFrutas = ['Abacaxi', "Laranja", "Maça", "Melância", "Manga"];
 console.log(...listaFrutas);
+///exemplo5 - lista heterogênea de uma tupla
+let listaFrutas2 = [5, true, ...listaFrutas];
+console.log(listaFrutas2);
+///exemplo6 - Uso de função com tuplas
+function listarPessoas(nomes, idades) {
+    return [...nomes, ...idades];
+}
+;
+let resultado = listarPessoas(["Luís Eduardo", "Lucas Cauã"], [20, 18]);
+console.log(resultado);
+function criarPessoa(...nome) {
+    return [...nome];
+}
+;
+console.log(criarPessoa("Luís Eduardo", 'Sabino'));
+console.log(criarPessoa("Luís Eduardo", 'Sabino', 'da Silva'));
