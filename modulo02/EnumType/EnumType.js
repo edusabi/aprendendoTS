@@ -9,7 +9,7 @@ var Idioma;
 })(Idioma || (Idioma = {}));
 ;
 // console.log(Idioma);
-////exemplo2 - Como podemos acessar o valor de um Enum com uma chave: (usando o const)
+////exemplo2 - String Enums
 var Dia;
 (function (Dia) {
     Dia["Segunda"] = "SEG";
@@ -21,5 +21,34 @@ var Dia;
     Dia["Domingo"] = "DOM";
 })(Dia || (Dia = {}));
 ;
-console.log(Dia);
-////exemplo3 - Quando usar Enum?
+;
+function comida(c) {
+    return 'Comidas muito apetitosas!';
+}
+;
+console.log(comida("Pizza" /* Comida.Pizza */));
+console.log(comida("Churrasco" /* Comida.Churrasco */));
+// console.log(comida(5));
+////exemplo4 - Quando usar Enum?
+var Tarefa;
+(function (Tarefa) {
+    Tarefa[Tarefa["NaoFeita"] = 0] = "NaoFeita";
+    Tarefa[Tarefa["Progress"] = 1] = "Progress";
+    Tarefa[Tarefa["Done"] = 2] = "Done";
+})(Tarefa || (Tarefa = {}));
+;
+const concluidaTarefa = {
+    id: 1,
+    status: Tarefa.NaoFeita,
+    descrição: "Parabéns! Tarefa concluída com sucesso!"
+};
+if (concluidaTarefa.status == Tarefa.Done) {
+    console.log("Tarefa concluída!");
+}
+else if (concluidaTarefa.status == Tarefa.Progress) {
+    console.log("Tarefa em progresso!");
+}
+else {
+    console.log("Tarefa Não feita!");
+}
+;
